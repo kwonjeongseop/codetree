@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+
+        int[][] arr1 = new int[N][M];
+        int[][] arr2 = new int[N][M];
+        int[][] sum = new int[N][M];
+
+        for( int i=0; i<N; i=i+1 ){
+            for( int j=0; j<M; j=j+1 ){
+                arr1[i][j] = sc.nextInt();
+            }
+        }
+
+        for( int i=0; i<N; i=i+1 ){
+            for( int j=0; j<M; j=j+1 ){
+                arr2[i][j] = sc.nextInt();
+            }
+        }
+
+        for( int i=0; i<N; i=i+1 ){
+            for( int j=0; j<M; j=j+1){
+                if(arr1[i][j] == arr2[i][j]){
+                    sum[i][j] = 0;
+                }else{
+                    sum[i][j] = 1;        
+                }
+            }
+        }
+
+        for( int i=0; i<N; i=i+1 ){
+            for( int j=0; j<M; j=j+1 ){
+                System.out.print(sum[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+
+        sc.close();
+    }
+}
