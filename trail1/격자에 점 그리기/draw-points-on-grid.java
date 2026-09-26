@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+
+        int[][] arr = new int[N][N];
+
+        for( int i=1; i<=M; i=i+1){
+            int r = sc.nextInt();
+            int c = sc.nextInt();
+            
+                arr[r-1][c-1] = i;
+        }
+
+        for( int i=0; i<N; i=i+1){
+            for (int j = 0; j < N; j = j + 1) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
