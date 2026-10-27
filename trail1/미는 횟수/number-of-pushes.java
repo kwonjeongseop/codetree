@@ -7,21 +7,22 @@ public class Main {
         String A = sc.next();
         String B = sc.next();
 
-        int n = A.length();
+        int N = A.length();
         int ans = -1;
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= N; i++) {
             // A를 우측으로 i번 민 문자열 생성
-            String shifted = A.substring(n - i) + A.substring(0, n - i);
+            String shiftR = A.substring(N - i) + A.substring(0, N - i);
 
-            // 문자열 내용 비교는 .equals() 사용
-            if (shifted.equals(B)) {
-                ans = i;
-                break;
+            // B와 일치하는지 비교
+            if (shiftR.equals(B)) { 
+                ans = i; 
+                break; 
             }
         }
 
         System.out.println(ans);
+
         sc.close();
     }
 }
